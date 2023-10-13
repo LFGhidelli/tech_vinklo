@@ -1,0 +1,71 @@
+.edit-actions-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #9780FB;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  width: 48%;
+  margin-top: 12px;
+  text-align: center;
+}
+.delete-actions-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #EB5647;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+.form-buttons {
+  display: inline-block;
+}
+.reset-button {
+  margin-left: 10px;
+}
+.new-user-btn {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #440F5F;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    width: 50%;
+    margin-top: 12px;
+}
+
+.flex-buttons {
+  display: flex;
+  gap: 5px;
+}
+.search-bar {
+  margin-right: 10px;
+}
+
+.back-btn {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #9780FB;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+  width: 50%;
+  text-align: center;
+}
+
+.edit-back-btn {
+  display: flex;
+  gap: 10px;
+
+}

@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<!-- app/views/users/index.html.erb -->
+
+<table class="table table-bordered table-hover table-style">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>CPF</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.phone %></td>
+        <td><%= user.cpf %></td>
+        <td class='flex-buttons'>
+          <%= link_to "Edit", edit_user_path(user), class: "edit-actions-btn" %>
+          <%= button_to "Delete", user, method: :delete, class: "delete-actions-btn", data: { turbo_confirm: "Are you sure you want to delete this user?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New user", new_user_path, class:'new-user-btn' %>

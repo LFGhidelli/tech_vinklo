@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DemoFestalab</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="nav-vinklo">
+      <%= link_to users_path do %>
+        <%= image_tag 'vinklo_2.png', alt: '' %>
+      <% end %>
+      <div class="search-container">
+        <%= form_with(url: users_path, method: "get", local: true) do %>
+          <div class="d-flex align-items-center">
+            <%= text_field_tag :search, params[:search], class: "form-control border search-bar" %>
+            <%= submit_tag "Search", class: "btn btn-success" %>
+          </div>
+        <% end %>
+          <%= link_to "Reset", users_path, class: "btn btn-secondary" %>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+
+    </div>
+  </body>
+</html>

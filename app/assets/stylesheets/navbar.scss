@@ -1,0 +1,16 @@
+.nav-vinklo {
+  background: #450E5F;
+  display: flex;
+  align-items: center;
+  height: 90px;
+  justify-content: space-between;
+  img {
+    height: 90px;
+  }
+}
+
+.search-container {
+  display: flex;
+  gap: 5px;
+  margin-right: 20px;
+}

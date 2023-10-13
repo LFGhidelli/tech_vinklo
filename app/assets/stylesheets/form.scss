@@ -1,0 +1,21 @@
+.container {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.form {
+  padding: 24px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.form-control {
+  width: 100%;
+  // margin-top: 8px;
+}
+
+.light-placeholder::placeholder {
+  color: lightgray;
+  opacity: 1;
+
+}
