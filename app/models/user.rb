@@ -1,11 +1,12 @@
 class User < ApplicationRecord
-  validates :email, format: { with: /\A\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+\z/, message: "inválido" }, uniqueness: { case_sensitive: false, message: "já existe" }
+  validates :email, format: { with: /\A[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?\z/, message: "inválido" }, uniqueness: { case_sensitive: false, message: "já existe" }
   validates :cpf, uniqueness: { case_sensitive: false, message: "CPF já existe" }
   validates :phone, uniqueness: { case_sensitive: false, message: "Número de telefone já existe" }
 
   validate :cpf_valid?
   validate :phone_valid?
   before_validation :sanitize_phone_number
+  before_validation :downcase_email
 
   def sanitize_phone_number
     self.phone = self.phone.gsub(/\D/, '') if self.phone
@@ -108,5 +109,11 @@ class User < ApplicationRecord
     digits = self.phone.gsub(/\D/, '') # remover todos nao digitos
     formatted_phone = "#{digits[0..1]} #{digits[2]} #{digits[3..6]}-#{digits[7..10]}"
     self.phone = formatted_phone
+  end
+
+  private
+
+  def downcase_email
+    self.email = email.downcase if email.present?
   end
 end
