@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  validates :email, format: { with: /\A[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?\z/, message: "inválido" }, uniqueness: { case_sensitive: false, message: "já existe" }
+  validates :email, format: { with: /\A\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+\z/}, uniqueness: { case_sensitive: false, message: "já existe" }
+
   validates :cpf, uniqueness: { case_sensitive: false, message: "CPF já existe" }
   validates :phone, uniqueness: { case_sensitive: false, message: "Número de telefone já existe" }
 
