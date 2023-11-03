@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+\z/}, uniqueness: { case_sensitive: false, message: "já existe" }
 
   validates :cpf, uniqueness: { case_sensitive: false, message: "CPF já existe" }
-  validates :phone, uniqueness: { case_sensitive: false, message: "Número de telefone já existe" }
+  validates :phone, uniqueness: { message: "Número de telefone já existe" }
 
   validate :cpf_valid?
   validate :phone_valid?
@@ -125,8 +125,6 @@ class User < ApplicationRecord
   #   formatted_phone = "#{phone_number[0..1]} #{phone_number[2]} #{phone_number[3..6]} #{phone_number[7..10]}"
   #   self.phone = formatted_phone
   # end
-
-  private
 
   def downcase_email
     self.email = email.downcase if email.present?
