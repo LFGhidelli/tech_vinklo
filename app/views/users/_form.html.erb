@@ -3,7 +3,7 @@
 
   <% if @user.errors.any? %>
     <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading">The form contains <%= pluralize(@user.errors.count, "error") %>!</h4>
+      <h4 class="alert-heading">O form tem <%= pluralize(@user.errors.count, "erro") %>!</h4>
       <ul class="mb-0">
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -16,22 +16,22 @@
 
     <div class='form'>
       <div>
-        <%= form.label :name, style: "display: block; margin-top: 12px;"%>
+        <%= form.label :name, class:'form-label'%>
         <%= form.text_field :name, class: "form-control border light-placeholder" %>
       </div>
 
       <div>
-        <%= form.label :email, style: "display: block; margin-top: 12px;" %>
+        <%= form.label :email, class:'form-label' %>
         <%= form.text_field :email, class: "form-control border light-placeholder",placeholder: "johndoe@email.com" %>
       </div>
 
       <div>
-        <%= form.label :phone, style: "display: block; margin-top: 12px;" %>
+        <%= form.label :phone, class:'form-label' %>
         <%= form.text_field :phone, class: "form-control border light-placeholder", placeholder: "DDD 9 1234 5678" %>
       </div>
 
       <div>
-        <%= form.label :cpf, style: "display: block; margin-top: 12px;" %>
+        <%= form.label :cpf, class:'form-label' %>
         <%= form.text_field :cpf, class: "form-control border light-placeholder", placeholder: "123.456.789-12" %>
       </div>
 
